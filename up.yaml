@@ -2,8 +2,17 @@
 - name: Start and maintain database
   hosts: localhost
   tasks:
+  - name: Remove mysql.txt file (delete file)
+    ansible.builtin.file:
+      path: /tmp/mysqldown.txt
+      state: absent
 
-  - name: Print the gateway for each host when defined
+  - name: Ansible hello world
     ansible.builtin.debug:
-      msg: Hello from ansible
+      msg: Hello from ansible in up.yaml
+  - name: start mysql
+    ansible.builtin.shell: sudo service mysql start > /tmp/mysql.txt
+    args:
+      creates: /tmp/mysql.txt
+
 
