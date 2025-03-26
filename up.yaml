@@ -14,5 +14,9 @@
     ansible.builtin.shell: sudo service mysql start > /tmp/mysql.txt
     args:
       creates: /tmp/mysql.txt
+  - name: created database
+    ansible.builtin.shell: sudo mysql -u root < migrations/createdb.sql && mv migrations/createdb.sql migrations/finished
+    args:
+      creates: migrations/finished/createdb.sql
 
 
