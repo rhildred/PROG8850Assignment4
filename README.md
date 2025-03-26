@@ -5,7 +5,7 @@ TLDR;
 
 ```bash
 pip install -r requirements.txt
-sudo service mysql start
+ansible-playbook up.yaml
 ```
 
 To access database:
