@@ -14,4 +14,10 @@ To access database:
 sudo mysql -u root
 ```
 
+To cleanup
+
+```bash
+ansible-playbook down.yaml
+```
+
 happy mysql!
